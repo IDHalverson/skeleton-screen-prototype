@@ -16,6 +16,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "watch": "npm-watch",
     "do-skeleton-view-script": "node ./scripts/insert-skeleton-view.js"
   },
   "watch": {
@@ -24,7 +25,8 @@
         "public/skeleton-view/constants.js",
         "public/skeleton-view/skeleton-view.css",
         "public/skeleton-view/skeleton-view.js",
-        "public/skeleton-view/skeleton-view.html"
+        "public/skeleton-view/skeleton-view.html",
+        "public/base-index.html"
       ],
       "quiet": false,
       "runOnChangeOnly": true
