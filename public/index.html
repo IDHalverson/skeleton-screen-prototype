@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+		<style>
+			#root {
+			  position: relative;
+			  left: 110vw;
+			}
+			
+			#skeleton {
+			  min-height: 100vh;
+			  display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  justify-content: center;
+			  font-size: calc(10px + 2vmin);
+			  color: black;
+			}
+			
+			.skeleton-image-placeholder {
+			  background: rgba(0, 0, 0, 0.2);
+			  height: 40vmin;
+			  width: 40vmin;
+			}
+			
+			.shimmer {
+			  background: linear-gradient(
+			    to right,
+			    rgba(0, 0, 0, 0.1) 4%,
+			    rgba(0, 0, 10, 0.15) 25%,
+			    rgba(0, 0, 0, 0.1) 66%
+			  );
+			  background-size: 1000px 100%;
+			  animation: shimmer 2s infinite linear;
+			}
+			
+			@keyframes shimmer {
+			  0% {
+			    background-position: -1000px 0;
+			  }
+			  100% {
+			    background-position: 1000px 0;
+			  }
+			}
+		</style>
+		<script>"use strict";function i(t){return function(t){if(Array.isArray(t))return r(t)}(t)||function(t){if("undefined"!=typeof Symbol&&null!=t[Symbol.iterator]||null!=t["@@iterator"])return Array.from(t)}(t)||function(t,e){if(t){if("string"==typeof t)return r(t,e);var n=Object.prototype.toString.call(t).slice(8,-1);return"Map"===(n="Object"===n&&t.constructor?t.constructor.name:n)||"Set"===n?Array.from(t):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?r(t,e):void 0}}(t)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function r(t,e){(null==e||e>t.length)&&(e=t.length);for(var n=0,r=new Array(e);n<e;n++)r[n]=t[n];return r}var e=Date.now(),n=(setTimeout(function(){(function t(){document.getElementById("skeleton")&&document.querySelector("#root")?n():Date.now()-e<5e3&&setTimeout(t,200)})()},0),function(){var t=[],n=document.querySelector("#root"),a=document.getElementById("skeleton"),r=(t&&t.forEach(function(t){var e=t.pl,n=void 0===e?"append":e,r=t.ele,e=t.cond,o=t.count,o=void 0===o?1:o;t.hasOwnProperty("cond")&&!e()||i(Array(o)).fill().forEach(function(){var t=r.trim(),e=document.createElement("template");e.innerHTML=t,a[n](e.content.firstChild)})}),Date.now()),o=setInterval(function(){var t=!1,e=document.querySelector("#".concat("main-image"));((t=e&&e.complete?!0:t)||5e3<Date.now()-r)&&(clearInterval(o),n.style.display="none",n.style.left="auto",n.style.position="static",setTimeout(function(){a.remove(),n.style.display="inline"},50))},200)});</script>
+    <meta charset="utf-8" />
+    <title>Skeleton View Example</title>
+  </head>
+  <body>
+		<div id="skeleton">
+			<div class="skeleton-image-placeholder shimmer"></div>
+		</div>
+    <div id="root"></div>
+  </body>
+</html>
